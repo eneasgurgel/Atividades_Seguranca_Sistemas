@@ -1,15 +1,15 @@
 import hashlib
 
 def  cifraDeCesar(texto, chave, cifra):
-    letras = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '$', '!']
+    dicionario = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '$', '!']
     textofinal = ''
     for l in texto:
-        if (l != ' ') and (l in letras):
+        if (l != ' ') and (l in dicionario):
             if cifra:
-                posicao = (letras.index(l) + chave) % len(letras)
+                posicao = (dicionario.index(l) + chave) % len(dicionario)
             else:
-                posicao = (letras.index(l) - chave) % len(letras)
-            textofinal = textofinal + letras[posicao]
+                posicao = (dicionario.index(l) - chave) % len(dicionario)
+            textofinal = textofinal + dicionario[posicao]
         else:
             textofinal += l
     return textofinal  
